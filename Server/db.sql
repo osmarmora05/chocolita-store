@@ -23,19 +23,19 @@ CREATE TABLE Productos (
 );
 
 -- 3) Pedidos
-CREATE TABLE Pedidos (
-    pedido_id INT AUTO_INCREMENT PRIMARY KEY, 
+CREATE TABLE Ventas (
+    venta_id INT AUTO_INCREMENT PRIMARY KEY, 
     cliente_id INT, 
     fecha DATE, 
     FOREIGN KEY (cliente_id) REFERENCES Clientes(cliente_id) ON DELETE CASCADE
 );
 
 -- 4) Detalle del producto
-CREATE TABLE DetalleDelProducto(
+CREATE TABLE DetalleDeVenta(
     detalle_id INT AUTO_INCREMENT PRIMARY KEY, 
-    pedido_id INT, 
+    venta_id INT, 
     producto_id INT, 
     cantidad INT, 
-    FOREIGN KEY (pedido_id) REFERENCES Pedidos(pedido_id) ON DELETE CASCADE,
+    FOREIGN KEY (venta_id) REFERENCES Ventas(venta_id) ON DELETE CASCADE,
     FOREIGN KEY (producto_id) REFERENCES Productos(producto_id) ON DELETE CASCADE
 );
