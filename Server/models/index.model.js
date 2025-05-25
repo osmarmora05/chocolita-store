@@ -1,8 +1,17 @@
 import {
     getProductos
-} from "../models/productos.model.js";
+} from "./productos.model.js";
 
+import {
+    createVentas
+} from "./ventas.model.js";
+
+import {
+    createDetalle
+} from "./detalle.model.js";
 
 export {
-    getProductos
+    getProductos,
+    createVentas,
+    createDetalle
 }
