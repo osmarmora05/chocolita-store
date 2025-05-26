@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <header className="header">
         <div className="logo">
-          <img src="/logo.png" alt="Chocolita Store" />
+          <img src="/logo-chocolita-store.png" alt="Chocolita Store" />
           <h1>Chocolita Store</h1>
         </div>
         <nav>
@@ -28,7 +28,7 @@ function App() {
 
       <footer className="footer">
         <div className="logo-footer">
-          <img src="/logo.png" alt="Chocolita Store" />
+          <img src="/logo-chocolita-store.png" alt="Chocolita Store" />
           <p>Chocolita Store</p>
         </div>
         <div>

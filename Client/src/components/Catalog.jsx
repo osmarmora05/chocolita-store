@@ -8,7 +8,7 @@ const Catalog = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('http://localhost:3000/api/productos')
       .then(res => res.json())
       .then(data => setProducts(data));
   }, []);
