@@ -1,11 +1,11 @@
-//import { useState } from 'react'
-//import reactLogo from './assets/react.svg'
-//import viteLogo from '/vite.svg'
-import React from 'react';
+import React, { useState } from 'react';
 import Catalog from './components/Catalog';
+import Home from './components/Home';
 import './App.css';
 
 function App() {
+  const [page, setPage] = useState('home');
+
   return (
     <div className="App">
       <header className="header">
@@ -14,29 +14,24 @@ function App() {
           <h1>Chocolita Store</h1>
         </div>
         <nav>
-          <a href="#">HOME</a>
-          <a href="#">Carrito de compras</a>
-          <a href="#">Catálogo</a>
-          <a href="#">Contacto</a>
+          <button onClick={() => setPage('home')}>HOME</button>
+          <button onClick={() => setPage('catalog')}>CATÁLOGO</button>
+          <button onClick={() => setPage('carrito')}>Carrito de compras</button>
+          <button onClick={() => setPage('contacto')}>Contacto</button>
         </nav>
       </header>
 
       <main>
-        <h2 className="catalog-title">CATÁLOGO</h2>
-        <Catalog />
+        {page === 'home' && <Home />}
+        {page === 'catalog' && (
+          <>
+            <h2 className="catalog-title">CATÁLOGO</h2>
+            <Catalog />
+          </>
+        )}
+        {page === 'carrito' && <p>Aquí irá el carrito...</p>}
+        {page === 'contacto' && <p>Sección de contacto...</p>}
       </main>
-
-      <footer className="footer">
-        <div className="logo-footer">
-          <img src="/logo-chocolita-store.png" alt="Chocolita Store" />
-          <p>Chocolita Store</p>
-        </div>
-        <div>
-          <p>📞 +420 000 000 000</p>
-          <p>📍 Na Plzeňce 1166/0, 150 00</p>
-        </div>
-        <p className="privacy">Privacy Policy</p>
-      </footer>
     </div>
   );
 }
