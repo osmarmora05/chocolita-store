@@ -40,3 +40,58 @@
 .read-the-docs {
   color: #888;
 }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+header {
+  background: linear-gradient(to right, #2f1b0c, #4e2b1c);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+}
+
+.catalog-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 30px 0 20px;
+}
+
+footer {
+  background-color: #1e1e1e;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #aaa;
+  flex-wrap: wrap;
+}
+
+.privacy {
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 0.85rem;
+  opacity: 0.6;
+}
