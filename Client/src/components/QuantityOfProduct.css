@@ -1,0 +1,30 @@
+.cart-card__counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #e7e7e7;
+  color: black;
+}
+
+.cart-card__counter-box-minus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.cart-card__counter-box-plus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+}
+
+.cart-card__counter-box-minus,
+.cart-card__counter-box-plus {
+  cursor: pointer;
+}
