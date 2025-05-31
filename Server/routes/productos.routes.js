@@ -1,8 +1,11 @@
 import express from 'express';
-import { getProductos } from '../models/index.model.js';
+import { listarProductos } from '../controllers/index.controller.js'; 
+
+// Importamos express y el controlador de productos
 const routerProductos = express.Router();
 
-routerProductos.get('/', getProductos);
+// Rutas para los productos
+routerProductos.get('/', listarProductos);
 
 export {
     routerProductos

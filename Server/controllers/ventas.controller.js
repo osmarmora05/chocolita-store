@@ -1,4 +1,4 @@
-import { createDetalle, createVentas } from "../models/index.model.js";
+import { createDetalle, createVentas, getVentas } from "../models/index.model.js";
 
 export const saveVentas = async (req, res) => {
     try {
@@ -21,10 +21,28 @@ export const saveVentas = async (req, res) => {
 
         console.log('Detalle creado con éxito');
         // Enviamos la respuesta al cliente
-        res.status(201).json({ message: 'Venta creada con éxito'});
+        res.status(201).json({ message: 'Venta creada con éxito' });
 
     } catch (error) {
         console.error('Error al listar ventas:', error);
         res.status(500).json({ message: 'Error al listar productos' });
+    }
+}
+
+export const listarVentas = async (req, res) => {
+    try {
+        const ventas = await getVentas();
+        
+        // Verificamos si hay ventas
+        if (!ventas || ventas.length === 0) {
+            return res.status(404).json({ message: 'No se encontraron ventas' });
+        }
+        
+        // Enviamos las ventas al cliente
+        res.status(200).json(ventas);
+
+    } catch (error) {
+        console.error('Error al listar ventas:', error);
+        res.status(500).json({ message: 'Error al listar ventas' });
     }
 }

@@ -11,3 +11,13 @@ export const createVentas = async () => {
         res.status(500).json({ error: 'Error al obtener las ventas' });
     }
 }
+
+export const getVentas = async () => {
+    try {
+        const connect = await db();
+        const [rows] = await connect.query('SELECT * FROM Ventas;');
+        return rows;
+    } catch (error) {
+        console.error('Error al obtener las ventas:', error);
+    }
+}

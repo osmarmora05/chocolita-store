@@ -1,6 +1,19 @@
-import { listarProductos } from "./productos.controller.js";
-import { saveVentas } from "./ventas.controller.js";
+import {
+    listarProductos
+} from "./productos.controller.js";
+
+import {
+    saveVentas, 
+    listarVentas
+} from "./ventas.controller.js";
+
+import {
+    listarDetalle
+} from "./detalle.controller.js";
+
 export {
     listarProductos,
-    saveVentas
+    saveVentas,
+    listarVentas,
+    listarDetalle
 }

@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors' // Permite hacer la comunicación el backend con el frontend
-import { routerProductos, routerVentas } from './routes/index.routes.js';
+import { routerProductos, routerVentas, routerDetalle } from './routes/index.routes.js';
 
 // Creando el servidor con express
 const app = express();
@@ -19,6 +19,7 @@ app.get('/', async (req, res) => {
 // Rutas
 app.use('/api/productos', routerProductos);
 app.use('/api/ventas', routerVentas);
+app.use('/api/detalle', routerDetalle);
 
 // Puerto de escucha
 app.listen(3000, () => {

@@ -9,3 +9,14 @@ export const createDetalle = async (ventaId, productoId, cantidad) => {
         throw error;
     }
 }
+
+export const getDetalle = async (venta_id) => {
+    try {
+        const connection = await db();
+        const [rows] = await connection.query('SELECT dv.detalle_id, v.venta_id, p.nombre AS producto, dv.cantidad, p.precio, (dv.cantidad * p.precio) AS total FROM DetalleDeVenta dv JOIN Ventas v ON dv.venta_id = v.venta_id JOIN Productos p ON dv.producto_id = p.producto_id WHERE v.venta_id = ?;', [venta_id]);
+        return rows;
+    } catch (error) {
+        console.error('Error al obtener el detalle:', error);
+        throw error;
+    }
+}

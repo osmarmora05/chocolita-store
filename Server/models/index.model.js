@@ -3,15 +3,19 @@ import {
 } from "./productos.model.js";
 
 import {
-    createVentas
+    createVentas,
+    getVentas
 } from "./ventas.model.js";
 
 import {
-    createDetalle
+    createDetalle,
+    getDetalle
 } from "./detalle.model.js";
 
 export {
     getProductos,
     createVentas,
-    createDetalle
+    createDetalle,
+    getVentas,
+    getDetalle
 }
