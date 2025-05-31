@@ -3,6 +3,7 @@ import QuantityOfProduct from "./QuantityOfProduct";
 import { useCart } from "../hooks/useCart";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { API_URL } from "../config";
 
 function Cart() {
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
@@ -23,7 +24,7 @@ function Cart() {
         cantidad: item.cantidad,
       })),
     };
-    fetch("http://localhost:3000/api/ventas", {
+    fetch(`${API_URL}/ventas`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

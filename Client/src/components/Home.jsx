@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import './Home.css';
 import ProductModal from './ProductModal';
+import { API_URL } from '../config';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/productos')
+    fetch(`${API_URL}/productos`)
       .then(res => res.json())
       .then(data => {
         setProducts(data);
