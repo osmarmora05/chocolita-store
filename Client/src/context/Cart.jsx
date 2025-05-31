@@ -22,10 +22,8 @@ export function CartProvider({ children }) {
         return item;
       });
 
-      console.log("Viejo en el carrito");
       setCart(newCart);
     } else {
-      console.log("Nuevo en el carrito");
       setCart((prevState) => [
         ...prevState,
         {
