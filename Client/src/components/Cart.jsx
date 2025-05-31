@@ -40,54 +40,65 @@ function Cart() {
   return (
     <>
       <h2 className="cart__title">Carrito de compras</h2>
-      {cart.map((product) => {
-        const quantity = product.cantidad || 1;
-        const subtotal = product.precio * quantity.toFixed(2);
 
-        const increase = () =>
-          updateQuantity(product.producto_id, quantity + 1);
-        const decrease = () =>
-          updateQuantity(product.producto_id, quantity - 1);
+      {cart.length === 0 ? (
+        <p>
+          Oye, el carrito está vacío. ¿Por qué no pruebas agregar un producto?
+        </p>
+      ) : (
+        cart.map((product) => {
+          const quantity = product.cantidad || 1;
+          const subtotal = product.precio * quantity.toFixed(2);
 
-        return (
-          <div className="cart-card" key={product.id}>
-            <div className="cart-card__main">
-              <div className="cart-card__info-container">
-                <img
-                  src={product.imagen}
-                  alt={product.nombre}
-                  className="cart-card__img"
-                />
-                <div className="cart-card__info">
-                  <div>
-                    <h5 className="cart-card__name">{product.nombre}</h5>
-                    <span className="cart-card__price">$ {product.precio}</span>
-                  </div>
-                  <QuantityOfProduct
-                    value={quantity}
-                    increase={increase}
-                    decrease={decrease}
+          const increase = () =>
+            updateQuantity(product.producto_id, quantity + 1);
+          const decrease = () =>
+            updateQuantity(product.producto_id, quantity - 1);
+
+          return (
+            <div className="cart-card" key={product.id}>
+              <div className="cart-card__main">
+                <div className="cart-card__info-container">
+                  <img
+                    src={product.imagen}
+                    alt={product.nombre}
+                    className="cart-card__img"
                   />
+                  <div className="cart-card__info">
+                    <div>
+                      <h5 className="cart-card__name">{product.nombre}</h5>
+                      <span className="cart-card__price">
+                        $ {product.precio}
+                      </span>
+                    </div>
+                    <QuantityOfProduct
+                      value={quantity}
+                      increase={increase}
+                      decrease={decrease}
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="cart-card__aside">
-              <span className="cart-card__subtotal">$ {subtotal}</span>
-              <button onClick={() => removeFromCart(product)}>Eliminar</button>
-            </div>
+              <div className="cart-card__aside">
+                <span className="cart-card__subtotal">$ {subtotal}</span>
+                <button onClick={() => removeFromCart(product)}>
+                  Eliminar
+                </button>
+              </div>
 
-            <div className="cart-card__description">
-              <details>
-                <summary>Ver descripción</summary>
-                <p>{product.descripcion}</p>
-              </details>
+              <div className="cart-card__description">
+                <details>
+                  <summary>Ver descripción</summary>
+                  <p>{product.descripcion}</p>
+                </details>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })
+      )}
 
-      {cart.length != 0 && (
+      {cart.length !== 0 && (
         <>
           <div className="cart__footer">
             Total:
