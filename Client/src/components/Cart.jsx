@@ -70,18 +70,18 @@ function Cart() {
                   />
                 </div>
               </div>
-
-              <div className="cart-card__description">
-                <details>
-                  <summary>Ver descripción</summary>
-                  <p>{product.descripcion}</p>
-                </details>
-              </div>
             </div>
 
             <div className="cart-card__aside">
               <span className="cart-card__subtotal">$ {subtotal}</span>
               <button onClick={() => removeFromCart(product)}>Eliminar</button>
+            </div>
+
+            <div className="cart-card__description">
+              <details>
+                <summary>Ver descripción</summary>
+                <p>{product.descripcion}</p>
+              </details>
             </div>
           </div>
         );
