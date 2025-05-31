@@ -66,4 +66,4 @@ INSERT INTO DetalleDeVenta (venta_id, producto_id, cantidad) VALUES (1, 1, 2), (
 
 -- Consultas
 -- Obtener el detalle de una venta específica
-SELECT dv.detalle_id, v.venta_id, p.nombre AS producto, dv.cantidad, p.precio, (dv.cantidad * p.precio) AS total FROM DetalleDeVenta dv JOIN Ventas v ON dv.venta_id = v.venta_id JOIN Productos p ON dv.producto_id = p.producto_id WHERE v.venta_id = 1;
+SELECT dv.detalle_id, v.venta_id, p.nombre AS producto, dv.cantidad, p.precio, (dv.cantidad * p.precio) AS total, p.imagen FROM DetalleDeVenta dv JOIN Ventas v ON dv.venta_id = v.venta_id JOIN Productos p ON dv.producto_id = p.producto_id WHERE v.venta_id = 1;
