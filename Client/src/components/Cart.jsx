@@ -91,7 +91,7 @@ function Cart() {
         <>
           <div className="cart__footer">
             Total:
-            <span>{totalOfCart}</span>
+            <span>$ {totalOfCart}</span>
           </div>
           <hr />
           <button className="cart__buy-btn" onClick={handlerSubmit}>
