@@ -63,7 +63,6 @@ sudo cp -r dist/* "$NGINX_WEB_APP_DEST_DIR"
 
 echo "Starting nginx.service"
 sudo systemctl start nginx.service
-echo "Succes"
 
 # Opening firewall ports
 # sudo firewall-cmd --permanent --add-service=http

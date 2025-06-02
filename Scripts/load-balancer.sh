@@ -47,9 +47,6 @@ done
 echo "Creating nginx config file ..."
 echo "$NGINX_CONF" | sudo tee "$NGINX_CONF_PATH" > /dev/null
 
-echo "Starting nginx.service"
-sudo systemctl start nginx.service
-
 echo -e "${YELLOW}TODOS:${NC}..."
 echo -e "${YELLOW}- Remember to add the IP of the slaves${NC}"
 
@@ -61,7 +58,8 @@ else
     echo "$IP $DOMAIN" | sudo tee -a /etc/hosts > /dev/null
 fi
 
-echo "Succes"
+echo "Starting nginx.service"
+sudo systemctl start nginx.service
 
 # Opening firewall ports
 # sudo firewall-cmd --permanent --add-service=http
