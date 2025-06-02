@@ -15,7 +15,7 @@ export function CartProvider({ children }) {
         if (index === productInCartIndex) {
           return {
             ...item,
-            cantidad: 1,
+            cantidad: item.cantidad + 1, // se suma 1 a la cantidad existente
           };
         }
 

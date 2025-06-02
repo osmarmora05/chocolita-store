@@ -1,0 +1,23 @@
+/* src/components/Contacto.css */
+.contacto-container {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fffbe6; /* Fondo cálido color crema */
+    border: 2px solid #b3541e; /* Borde chocolate */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #4a2511; /* Color de texto chocolate oscuro */
+  }
+  
+  .contacto-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #b3541e;
+  }
+  
+  .contacto-info p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+  }
+  
