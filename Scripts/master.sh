@@ -53,11 +53,6 @@ done
 echo "Creating nginx config file ..."
 echo "$NGINX_CONF" | sudo tee "$NGINX_CONF_PATH" > /dev/null
 
-# Start nginx
-echo "Starting nginx.service"
-sudo systemctl start nginx.service
-echo "Succes"
-
 # Setup for backend
 echo "Installing backend dependencies ..."
 cd ../Server
@@ -66,6 +61,9 @@ npm i
 echo "Run backend"
 npm run dev
 
+# Start nginx
+echo "Starting nginx.service"
+sudo systemctl start nginx.service
 
 
 # Opening firewall ports
