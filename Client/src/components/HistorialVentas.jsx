@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import "./HistorialVentas.css";
+import { API_URL } from "../config";
 
 const HistorialVentas = () => {
   const [ventas, setVentas] = useState([]);
@@ -10,7 +11,7 @@ const HistorialVentas = () => {
   useEffect(() => {
     const fetchVentas = async () => {
       try {
-        const resVentas = await fetch("http://localhost:3000/api/ventas");
+        const resVentas = await fetch(`${API_URL}/ventas`);
         const ventasData = await resVentas.json();
 
         if (!Array.isArray(ventasData)) {
@@ -28,7 +29,7 @@ const HistorialVentas = () => {
         // Obtener detalles solo después de establecer ventas
         const detallesTemp = {};
         for (const venta of ordenadas) {
-          const resDetalle = await fetch("http://localhost:3000/api/detalle", {
+          const resDetalle = await fetch(`${API_URL}/detalle`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ venta_id: venta.venta_id }),
