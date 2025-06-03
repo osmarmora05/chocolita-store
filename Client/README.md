@@ -1,12 +1,52 @@
-# React + Vite
+# Chocolita Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app for a fictional pulpería that sells a variety of everyday products.
 
-Currently, two official plugins are available:
+## 📷 Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src ="./screenshots/img1.png">
+<img src ="./screenshots/img2.png">
+<img src ="./screenshots/img3.png">
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Retrieve the product catalog.
+- Add items to the shopping cart.
+- Place orders.
+- View purchase history.
+- Home page and contact.
+
+_Note: Some of these features interact directly with the backend._
+
+## 🔧 Installation
+
+Install the dependencies
+
+```sh
+npm install
+```
+
+Start the project in development mode
+
+```sh
+npm run dev
+```
+
+## 🛠️Tech Stack
+
+- React + Vite
+
+## 📓 Libraries
+
+- [sonner](https://github.com/emilkowalski/sonner)
+- [React Router](https://github.com/remix-run/react-router)
+
+## 🖼️Styles
+
+### Icons
+
+- [tabler](https://tabler.io/icons)
+
+## Fonts
+
+- [Segoe UI](https://learn.microsoft.com/en-us/typography/font-list/segoe-ui)
