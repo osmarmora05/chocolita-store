@@ -1,9 +1,7 @@
-import db from '../config/db.js';
-
+import { connection } from '../config/db.js';
 export const createVentas = async () => {
     try {
-        const connect = await db();
-        const [rows] = await connect.query('INSERT INTO Ventas (cliente_id, fecha) VALUES (?, ?)', [1, new Date()]);
+        const [rows] = await connection.query('INSERT INTO Ventas (cliente_id, fecha) VALUES (?, ?)', [1, new Date()]);
         return rows.insertId;
 
     } catch (error) {
@@ -14,8 +12,7 @@ export const createVentas = async () => {
 
 export const getVentas = async () => {
     try {
-        const connect = await db();
-        const [rows] = await connect.query('SELECT * FROM Ventas;');
+        const [rows] = await connection.query('SELECT * FROM Ventas;');
         return rows;
     } catch (error) {
         console.error('Error al obtener las ventas:', error);
