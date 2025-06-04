@@ -1,5 +1,12 @@
 # Chocolita Store
 
+**_Idioma_**
+
+- 🇪🇸 Español
+- [🇺🇸 Ingles](./README.md)
+
+## 🧠 Sobre el proyecto
+
 Una aplicación web de una pulpería ficticia que vende una variedad de productos.
 
 ## 📷 Capturas de pantalla
