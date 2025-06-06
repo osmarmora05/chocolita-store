@@ -5,7 +5,7 @@ import { listarDetalle } from '../controller/detalle.controller.js';
 const routerDetalle = express.Router();
 
 // Rutas para el detalle de la venta
-routerDetalle.post('/', listarDetalle);
+routerDetalle.get('/', listarDetalle);
 
 export {
     routerDetalle

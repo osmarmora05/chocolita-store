@@ -5,7 +5,7 @@ export const listarDetalle = async (req, res) => {
         console.log('*****************************************************');
         console.log('Ejecutando microservicio de detalle de venta');
         console.log('*****************************************************');
-        const { venta_id } = req.body;
+        const { venta_id } = req.query;
         const detalle = await getDetalle(venta_id);
 
         // Verificamos si se encontró el detalle

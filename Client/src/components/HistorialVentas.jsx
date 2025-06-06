@@ -29,10 +29,9 @@ const HistorialVentas = () => {
         // Obtener detalles solo después de establecer ventas
         const detallesTemp = {};
         for (const venta of ordenadas) {
-          const resDetalle = await fetch(`${API_URL}/detalle`, {
-            method: "POST",
+          const resDetalle = await fetch(`${API_URL}/detalle?venta_id=${venta.venta_id}`, {
+            method: "GET",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ venta_id: venta.venta_id }),
           });
 
           const detalleData = await resDetalle.json();
