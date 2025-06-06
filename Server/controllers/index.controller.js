@@ -1,6 +1,6 @@
 import {
     listarProductos
-} from "./productos.controller.js";
+} from "../productos/controller/productos.controller.js";
 
 import {
     saveVentas, 
@@ -9,7 +9,7 @@ import {
 
 import {
     listarDetalle
-} from "./detalle.controller.js";
+} from "../detalles/controller/detalle.controller.js";
 
 export {
     listarProductos,

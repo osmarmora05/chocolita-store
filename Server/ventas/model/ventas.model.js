@@ -1,4 +1,5 @@
-import { connection } from '../config/db.js';
+import { connection } from '../../config/db.js';
+
 export const createVentas = async () => {
     try {
         const [rows] = await connection.query('INSERT INTO Ventas (cliente_id, fecha) VALUES (?, ?)', [1, new Date()]);

@@ -1,7 +1,12 @@
-import { createDetalle, createVentas, getVentas } from "../models/index.model.js";
+import { getVentas, createVentas } from "../model/ventas.model.js";
+import { createDetalle } from "../../detalles/model/detalle.model.js";
 
 export const saveVentas = async (req, res) => {
     try {
+        console.log('*****************************************************');
+        console.log('Ejecutando microservicio de ventas');
+        console.log('*****************************************************');
+
         // Pimero creamos la venta
         const newVentasId = await createVentas();
 
@@ -19,7 +24,6 @@ export const saveVentas = async (req, res) => {
             await createDetalle(newVentasId, producto_id, cantidad);
         });
 
-        console.log('Detalle creado con éxito');
         // Enviamos la respuesta al cliente
         res.status(201).json({ message: 'Venta creada con éxito' });
 
@@ -31,13 +35,16 @@ export const saveVentas = async (req, res) => {
 
 export const listarVentas = async (req, res) => {
     try {
+        console.log('*****************************************************');
+        console.log('Ejecutando microservicio de ventas');
+        console.log('*****************************************************');
         const ventas = await getVentas();
-        
+
         // Verificamos si hay ventas
         if (!ventas || ventas.length === 0) {
             return res.status(404).json({ message: 'No se encontraron ventas' });
         }
-        
+
         // Enviamos las ventas al cliente
         res.status(200).json(ventas);
 

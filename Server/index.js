@@ -1,25 +1,19 @@
 import express from 'express';
-import cors from 'cors' // Permite hacer la comunicación el backend con el frontend
-import { routerProductos, routerVentas, routerDetalle } from './routes/index.routes.js';
+import proxy from 'express-http-proxy';
 
 // Creando el servidor con express
 const app = express();
 
-// Middleware para parsear JSON
-app.use(express.json());
+// https://www.npmjs.com/package/express-http-proxy
 
-// Middleware para habilitar CORS
-app.use(cors());
+// Rutas de los microservicios
+app.use('/api/productos', proxy('http://localhost:3002'));
+app.use('/api/ventas', proxy('http://localhost:3003'));
+app.use('/api/detalle', proxy('http://localhost:3001'));
 
-// Raiz de la api
-app.get('/', async (req, res) => {
-  res.send("Hello world!");
+app.get('/', (req, res) => {
+  res.send('Bienvenido al API Gateway de la tienda');
 });
-
-// Rutas
-app.use('/api/productos', routerProductos);
-app.use('/api/ventas', routerVentas);
-app.use('/api/detalle', routerDetalle);
 
 // Puerto de escucha
 app.listen(3000, () => {

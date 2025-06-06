@@ -1,7 +1,10 @@
-import { getDetalle } from "../models/index.model.js";
+import { getDetalle } from "../model/detalle.model.js";
 
 export const listarDetalle = async (req, res) => {
     try {
+        console.log('*****************************************************');
+        console.log('Ejecutando microservicio de detalle de venta');
+        console.log('*****************************************************');
         const { venta_id } = req.body;
         const detalle = await getDetalle(venta_id);
 
