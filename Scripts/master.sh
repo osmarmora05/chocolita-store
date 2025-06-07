@@ -58,13 +58,12 @@ echo "Installing backend dependencies ..."
 cd ../Server
 npm i
 
-echo "Run backend"
-npm run dev
-
 # Start nginx
 echo "Starting nginx.service"
 sudo systemctl start nginx.service
 
+echo "Run backend"
+npm run dev
 
 # Opening firewall ports
 # sudo firewall-cmd --permanent --add-service=http
