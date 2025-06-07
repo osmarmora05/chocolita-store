@@ -11,7 +11,7 @@ An implementation of a cluster architecture composed of 4 nodes. The goal is to 
 
 ## 🏛️ Architecture
 
-<img src="./screnshots/architecture.en.png" width="800" height="750" alt="Architecture Diagram"/>
+<img src="./screenshots/architecture.en.png" width="800" height="750" alt="Architecture Diagram"/>
 
 The idea is that a load balancer is responsible for distributing client requests among the slave nodes, which serve the web page. Additionally, there is a master node that runs the backend, providing a REST API that the slave nodes consume.
 

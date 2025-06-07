@@ -11,7 +11,7 @@ Una implementación de arquitectura en clúster conformada por 4 nodos. El objet
 
 ## 🏛️ Arquitectura
 
-<img src="./screnshots/architecture.es.png" width="800" height="750" alt="Imagen de la arquitectura"/>
+<img src="./screenshots/architecture.es.png" width="800" height="750" alt="Imagen de la arquitectura"/>
 
 La idea es que existe un balanceador de carga que se encarga de distribuir las peticiones de los clientes entre los nodos esclavos, los cuales sirven la página web. Además, hay un nodo máster que se encarga de ejecutar el backend, ofreciendo una REST API que los nodos esclavos consumen.
 
